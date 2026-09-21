@@ -1,4 +1,4 @@
-$readme = @'
+
 # PDF AI Assistant
 
 An intelligent document question-answering system built using **Retrieval-Augmented Generation (RAG)**.
