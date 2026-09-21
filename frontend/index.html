@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo">✦</div>
+        <div>
+            <h1>PDF AI Assistant</h1>
+            <p>Ask intelligent questions about your documents</p>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="upload-card">
+            <h2>Upload Document</h2>
+            <p class="subtitle">
+                Upload a PDF and let AI understand its contents.
+            </p>
+
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📄</div>
+
+                <h3>Choose a PDF</h3>
+
+                <p>Drag & drop your document here or</p>
+
+                <label for="pdfInput" class="browse-btn">
+                    Browse File
+                </label>
+
+                <input
+                    type="file"
+                    id="pdfInput"
+                    accept=".pdf"
+                    hidden
+                >
+
+                <div id="fileName" class="file-name"></div>
+            </div>
+
+            <button id="uploadBtn" class="primary-btn">
+                Upload & Index
+            </button>
+
+            <div id="uploadStatus"></div>
+        </section>
+
+
+        <section class="question-card">
+
+            <h2>Ask Your Document</h2>
+
+            <p class="subtitle">
+                Ask a question and get an answer based on the uploaded PDFs.
+            </p>
+
+            <textarea
+                id="questionInput"
+                placeholder="Example: What is the purpose of an information security management system?"
+            ></textarea>
+
+            <button id="askBtn" class="primary-btn">
+                Ask AI
+            </button>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <span>Searching documents and generating answer...</span>
+            </div>
+
+        </section>
+
+
+        <section id="answerSection" class="answer-card hidden">
+
+            <h2>AI Answer</h2>
+
+            <div id="answer"></div>
+
+            <h3>Sources</h3>
+
+            <div id="sources"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Built with FastAPI · RAG · ChromaDB · Sentence Transformers · LLM</p>
+    </footer>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
